@@ -5,9 +5,9 @@ requirejs.config({
     Backbone: '../lib/backbone-min',
     Game: 'model/game',
     GameCollection: 'collection/gamecollection',
-	Router: 'router/router',
+    Router: 'router/router',
     App: 'app',
-    AppView: 'view/appview',
+    TitleView: 'view/titleview',
     GameTitleView: 'view/gametitleview'
   },
   shim: {

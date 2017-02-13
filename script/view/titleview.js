@@ -1,5 +1,5 @@
 define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
-  var AppView = Backbone.View.extend({
+  var TitleView = Backbone.View.extend({
     el: '#VGATitleContainer',
     template: _.template($('#websiteTitleTemplate').html()),
     initialize: function () {
@@ -14,5 +14,5 @@ define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
     }
   });
 
-  return AppView;
+  return TitleView;
 });

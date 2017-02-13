@@ -1,8 +1,7 @@
-define(['jQuery','Backbone'], function ($,Backbone) {
-	  
-var Game = Backbone.Model.extend({
-	composer:'truc'
-});
+define(['jQuery', 'Backbone'], function ($, Backbone) {
+  var Game = Backbone.Model.extend({
+    composer: 'truc'
+  });
 
-return Game;
-})
+  return Game;
+});

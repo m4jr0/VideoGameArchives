@@ -12,10 +12,15 @@
       <header id="VGATitleContainer">
         Loading...
       </header>
+      <section id="searchBar">
+        <form class="form-wrapper cf">
+        	<input type="text" placeholder="Search here..." required>
+      	  <button type="submit">Search</button>
+        </form>
+      </section>
       <section id="main">
         <section id="main">
           <ul id="gameList">
-            Loading...
           </ul>
         </section>
       </section>
@@ -28,8 +33,8 @@
       </section>
     </script>
     <script type="text/template" id="gameTitleTemplate">
-      <section class="view">
-        <label><%- gameTitle %></label>
+      <section class="view byline">
+        <label class="gameTitle"><%- gameTitle %></label>
       </section>
     </script>
     <script data-main="./script/loader.js" src="./lib/require.js"></script>

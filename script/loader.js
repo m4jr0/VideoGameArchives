@@ -3,6 +3,7 @@ requirejs.config({
     jQuery: '../lib/jquery-3.1.1.min',
     Underscore: '../lib/underscore-min',
     Backbone: '../lib/backbone-min',
+    App: 'app',
     AppView: 'view/appview'
   },
   shim: {
@@ -19,11 +20,11 @@ requirejs.config({
   }
 });
 
-require(['Main'], init);
+require(['App'], init);
 
-function init (Main) {
+function init (App) {
   'use strict';
 
-  var main = new Main();
-  main.initialize();
+  var app = new App();
+  app.initialize();
 }

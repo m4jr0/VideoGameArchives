@@ -5,6 +5,7 @@ requirejs.config({
     Backbone: '../lib/backbone-min',
     Game: 'model/game',
     GameCollection: 'collection/gamecollection',
+	Router: 'router/router',
     App: 'app',
     AppView: 'view/appview',
     GameTitleView: 'view/gametitleview'

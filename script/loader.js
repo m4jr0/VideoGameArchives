@@ -3,10 +3,11 @@ requirejs.config({
     jQuery: '../lib/jquery-3.1.1.min',
     Underscore: '../lib/underscore-min',
     Backbone: '../lib/backbone-min',
-	Game:'model/game',
-	GameCollection:'collection/gamecollection',
+    Game: 'model/game',
+    GameCollection: 'collection/gamecollection',
     App: 'app',
-    AppView: 'view/appview'
+    AppView: 'view/appview',
+    GameTitleView: 'view/gametitleview'
   },
   shim: {
     'jQuery': {

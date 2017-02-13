@@ -1,12 +1,15 @@
 define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
   var AppView = Backbone.View.extend({
     el: '#VGATitle',
-    template: _.template('<h3>Welcome to <%= title %>!</h3>'),
+    template: _.template($('#websiteTitleTemplate').html()),
     initialize: function () {
       this.render();
     },
     render: function () {
-      this.$el.html(this.template({title: 'Video Game Archives'}));
+      this.$el.html(this.template({
+        welcome: 'Welcome to',
+        title: 'VGA'
+      }));
     }
   });
 

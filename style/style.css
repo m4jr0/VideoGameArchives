@@ -1,0 +1,44 @@
+html {
+  background-color: #BBDEFB;
+  padding: 0px;
+  margin: 0px;
+}
+h1 {
+  color: white;
+  font-family: pricedown;
+  font-size: 10em;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  bottom: 55px;
+}
+#VGAApp {
+  background-color: #448AFF;
+  margin: 0 auto;
+  padding: 0px;
+  height:100%;
+  border-radius: 5px;
+  width: 800px;
+}
+#welcome {
+  color: white;
+  font-family: milkshake;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  right: 55px;
+}
+#VGATitle {
+  text-align: center;
+}
+@font-face {
+    font-family: milkshake;
+    src: url('font/Milkshake.otf');
+}
+@font-face {
+    font-family: pricedown;
+    src: url('font/pricedown_bl.otf');
+}
+html, body{
+  height: 100%;
+}

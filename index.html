@@ -13,9 +13,24 @@
         Loading...
       </header>
       <section id="main">
-        Loading...
+        <section id="main">
+          <ul id="gameList">
+            Loading...
+          </ul>
+        </section>
       </section>
     </section>
+    <script type="text/template" id="websiteTitleTemplate">
+      <section class="view">
+        <span id="welcome"><%- welcome %></span>
+        <h1><%- title %></h1>
+      </section>
+    </script>
+    <script type="text/template" id="gameTitleTemplate">
+      <section class="view">
+        <label><%- gameTitle %></label>
+      </section>
+    </script>
     <script data-main="./script/loader.js" src="./lib/require.js"></script>
   </body>
 </html>

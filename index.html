@@ -9,7 +9,7 @@
   </head>
   <body>
     <section id="VGAApp">
-      <header id="VGATitle">
+      <header id="VGATitleContainer">
         Loading...
       </header>
       <section id="main">
@@ -23,7 +23,8 @@
     <script type="text/template" id="websiteTitleTemplate">
       <section class="view">
         <span id="welcome"><%- welcome %></span>
-        <h1><%- title %></h1>
+        <h1 id="VGATitle"><%- title %></h1>
+        <span id="VGASubTitle"><%- subTitle %></span>
       </section>
     </script>
     <script type="text/template" id="gameTitleTemplate">

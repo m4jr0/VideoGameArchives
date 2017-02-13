@@ -3,14 +3,8 @@ html {
   padding: 0px;
   margin: 0px;
 }
-h1 {
-  color: white;
-  font-family: pricedown;
-  font-size: 10em;
-  padding: 0px;
-  margin: 0px;
-  position: relative;
-  bottom: 55px;
+html, body{
+  height: 100%;
 }
 #VGAApp {
   background-color: #448AFF;
@@ -22,23 +16,42 @@ h1 {
 }
 #welcome {
   color: white;
-  font-family: milkshake;
+  font-family: Milkshake;
   padding: 0;
   margin: 0;
   position: relative;
   right: 55px;
 }
 #VGATitle {
+  color: white;
+  font-family: Pricedown;
+  font-size: 10em;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  bottom: 55px;
+}
+#VGATitleContainer {
   text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+#VGASubTitle {
+  color: white;
+  font-family: FasterOne;
+  font-size: 2em;
+  position: relative;
+  bottom: 85px;
 }
 @font-face {
-    font-family: milkshake;
+    font-family: Milkshake;
     src: url('font/Milkshake.otf');
 }
 @font-face {
-    font-family: pricedown;
+    font-family: Pricedown;
     src: url('font/pricedown_bl.otf');
 }
-html, body{
-  height: 100%;
+@font-face {
+    font-family: FasterOne;
+    src: url('font/FasterOne-Regular.ttf');
 }

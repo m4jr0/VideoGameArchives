@@ -1,6 +1,6 @@
 define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
   var AppView = Backbone.View.extend({
-    el: '#VGATitle',
+    el: '#VGATitleContainer',
     template: _.template($('#websiteTitleTemplate').html()),
     initialize: function () {
       this.render();
@@ -8,7 +8,8 @@ define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
     render: function () {
       this.$el.html(this.template({
         welcome: 'Welcome to',
-        title: 'VGA'
+        title: 'VGA',
+        subTitle: 'Video Game Archives'
       }));
     }
   });

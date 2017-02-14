@@ -16,8 +16,7 @@ function ($, _, Backbone, TitleView, GameCollection, GameTitleView, Router) {
     this.games.fetch({
       dataType: 'json',
       success: function (collection, response) {
-        console.log(self.games);
-        self.games.each(self.addGameTitle, this);
+        self.selectRandomGameTitles(this);
         Backbone.history.start();
       }
     });
@@ -26,6 +25,20 @@ function ($, _, Backbone, TitleView, GameCollection, GameTitleView, Router) {
   App.prototype.addGameTitle = function (gameTitle) {
     var gameTitleView = new GameTitleView({model: gameTitle});
     $('#gameList').append(gameTitleView.render().el);
+  };
+
+  App.prototype.selectRandomGameTitles = function (test) {
+    var maxElements = 20;
+    var size = this.games.length;
+    var gamesToDisplay = new GameCollection();
+
+    if (maxElements > size) maxElements = size;
+
+    for (var i = 0; i < maxElements; i++) {
+      gamesToDisplay.add(this.games.models[Math.floor(Math.random() * size - 1)]);
+    }
+
+    gamesToDisplay.each(this.addGameTitle, test);
   };
 
   return App;

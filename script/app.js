@@ -1,15 +1,15 @@
 define(['jQuery', 'Underscore', 'Backbone', 'TitleView', 'GameCollection',
-  'GameTitleView', 'Router', 'SearchView'],
+  'GameTitleView', 'Router', 'SearchView', 'GameDetailsView'],
 function ($, _, Backbone, TitleView, GameCollection, GameTitleView, Router,
-  SearchView) {
+  SearchView, GameDetailsView) {
   function App () {
   }
 
   App.prototype.initialize = function () {
-    this.titleView = new TitleView();
     this.games = new GameCollection();
-    this.router = new Router();
+    this.router = new Router({app: this});
     this.router.app = this;
+    this.titleView = new TitleView();
     this.searchView = new SearchView();
     this.searchView.router = this.router;
     var self = this;
@@ -54,8 +54,16 @@ function ($, _, Backbone, TitleView, GameCollection, GameTitleView, Router,
     this.displayGameTitles(resultsCollection, windowVar);
   };
 
+  App.prototype.displayGameDetails = function (game) {
+    $('#gameList').empty();
+    $('#gameDetails').empty();
+    var gameDetailsView = new GameDetailsView({model: game});
+    $('#gameDetails').append(gameDetailsView.render().el);
+  };
+
   App.prototype.displayGameTitles = function (gameTitles, windowVar) {
-    $( "#gameList" ).empty();
+    $('#gameList').empty();
+    $('#gameDetails').empty();
     gameTitles.each(this.addGameTitle, windowVar);
   };
 

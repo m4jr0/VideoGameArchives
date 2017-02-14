@@ -25,7 +25,7 @@ function ($, _, Backbone, App) {
     },
     game: function (gameID) {
       var game = this.app.games.get({ cid: gameID });
-      window.alert(game.toJSON().game.label);
+      this.app.displayGameDetails(game);
     }
   });
 

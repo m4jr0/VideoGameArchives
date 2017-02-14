@@ -20,6 +20,8 @@
       </section>
       <section id="main">
         <section id="main">
+          <section id="gameDetails">
+          </section>
           <ul id="gameList">
             <label class="gameTitle">Loading</Label>
           </ul>
@@ -36,6 +38,37 @@
     <script type="text/template" id="gameTitleTemplate">
       <section class="view byline">
         <label class="gameTitle"><a href=<%= gameID %>><%= gameTitle %></a></label>
+      </section>
+    </script>
+    <script type="text/template" id="gameDetailsTemplate">
+      <section class="view byline">
+        <table class="tableGameDetails">
+          <tr>
+            <th>Type</th>
+            <th>Data</th>
+          </tr>
+          <tr>
+            <td data-th="Type">Title</td>
+            <td data-th="Data"><a class="noLink" href=<%= gameID %>><%= gameTitle %></a></td>
+          </tr>
+          <tr>
+            <td data-th="Type">Release date</td>
+            <td data-th="Data"><%- releaseDate %></td>
+          </tr>
+          <tr>
+            <td data-th="Type">Developer</td>
+            <td data-th="Data"><%- developer %></td>
+          </tr>
+          <tr>
+            <td data-th="Type">Computing platform</td>
+            <td data-th="Data"><%- computingPlatform %></td>
+          </tr>
+          <tr>
+            <td data-th="Type">Genre(s)</td>
+            <td data-th="Data"><%- genre %></td>
+          </tr>
+        </table>
+        <a href="" title="Back" id="backButton">Back</a>
       </section>
     </script>
     <script data-main="./script/loader.js" src="./lib/require.js"></script>

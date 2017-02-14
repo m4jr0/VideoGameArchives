@@ -9,7 +9,8 @@ requirejs.config({
     App: 'app',
     TitleView: 'view/titleview',
     GameTitleView: 'view/gametitleview',
-    SearchView: 'view/searchview'
+    SearchView: 'view/searchview',
+    GameDetailsView: 'view/gamedetailsview'
   },
   shim: {
     'jQuery': {

@@ -3,7 +3,6 @@ define(['jQuery', 'Game', 'Backbone'], function ($, game, Backbone) {
     model: game,
     url: 'https://dl.dropboxusercontent.com/u/100580224/VideoGameCleanLight.json',
     parse: function (response) {
-      console.log(response);
       return response;
     }
   });

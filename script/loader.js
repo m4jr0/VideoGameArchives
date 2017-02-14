@@ -8,7 +8,8 @@ requirejs.config({
     Router: 'router/router',
     App: 'app',
     TitleView: 'view/titleview',
-    GameTitleView: 'view/gametitleview'
+    GameTitleView: 'view/gametitleview',
+    SearchView: 'view/searchview'
   },
   shim: {
     'jQuery': {

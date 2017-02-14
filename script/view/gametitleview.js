@@ -4,7 +4,8 @@ define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
     template: _.template($('#gameTitleTemplate').html()),
     render: function () {
       this.$el.html(this.template({
-        gameTitle: this.model.toJSON()['game'].label
+        gameTitle: this.model.toJSON()['game'].label,
+        gameID: '#game/' + this.model.cid
       }));
 
       return this;

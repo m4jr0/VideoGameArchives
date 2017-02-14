@@ -21,6 +21,7 @@
       <section id="main">
         <section id="main">
           <ul id="gameList">
+            <label class="gameTitle">Loading</Label>
           </ul>
         </section>
       </section>
@@ -34,7 +35,7 @@
     </script>
     <script type="text/template" id="gameTitleTemplate">
       <section class="view byline">
-        <label class="gameTitle"><%- gameTitle %></label>
+        <label class="gameTitle"><a href=<%= gameID %>><%= gameTitle %></a></label>
       </section>
     </script>
     <script data-main="./script/loader.js" src="./lib/require.js"></script>

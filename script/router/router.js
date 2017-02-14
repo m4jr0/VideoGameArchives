@@ -3,6 +3,7 @@ function ($, _, Backbone, App) {
   var VGARouter = Backbone.Router.extend({
     routes: {
       '': 'randomGames',
+      'game/:title': 'game', // #game/
       'search/:query': 'search' // #search/
     },
     app: undefined,
@@ -21,6 +22,10 @@ function ($, _, Backbone, App) {
     },
     randomGames: function () {
       this.app.selectRandomGameTitles(this);
+    },
+    game: function (gameID) {
+      var game = this.app.games.get({ cid: gameID });
+      window.alert(game.toJSON().game.label);
     }
   });
 

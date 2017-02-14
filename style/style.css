@@ -183,8 +183,14 @@ ul {
   list-style-type: none;
 }
 .gameTitle a {
-  color:#d83c3c;
+  color: #ECEFF1;
   text-decoration:none;
+}
+.gameTitle a:hover {
+  color: white;
+}
+.gameTitle a:active {
+  color: #B0BEC5;
 }
 input:required {
     box-shadow:none;

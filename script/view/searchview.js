@@ -9,7 +9,12 @@ define(['jQuery', 'Underscore', 'Backbone'], function ($, _, Backbone) {
     search: function (event) {
       event.preventDefault();
       var text = $(event.currentTarget).find('input[type=text]').val();
-      this.router.navigate('/search/' + text, {trigger: true});
+
+      if (text.length > 0) {
+        this.router.navigate('/search/' + text, {trigger: true});
+      } else {
+        this.router.navigate('/', {trigger: true});
+      }
     }
   });
 

@@ -6,7 +6,7 @@ function ($, _, Backbone, TitleView, GameCollection, GameTitleView, Router,
   }
 
   App.prototype.initialize = function () {
-    this.games = new GameCollection();
+    
     this.router = new Router({app: this});
     this.router.app = this;
     this.titleView = new TitleView();
@@ -14,14 +14,35 @@ function ($, _, Backbone, TitleView, GameCollection, GameTitleView, Router,
     this.searchView.router = this.router;
     var self = this;
     this.titleView.router = this.router;
-
-    this.games.fetch({
-      dataType: 'json',
-      success: function (collection, response) {
-        self.selectRandomGameTitles(this);
-        Backbone.history.start();
-      }
+	var storage=JSON.parse(localStorage.getItem("games"));
+	if(storage==null){
+		this.games = new GameCollection();
+		this.games.fetch({
+		success: function (collection, response) {
+			self.selectRandomGameTitles(this);
+			Backbone.history.start();
+			localStorage.setItem("games",JSON.stringify(self.games));	
+		},
+		error : function (collection, response) {
+			self.games.url='https://dl.dropboxusercontent.com/u/100580224/VideoGameClean.json';
+			self.games.fetch({
+				success: function (collection, response) {
+					self.selectRandomGameTitles(this);
+					Backbone.history.start();
+					localStorage.setItem("games",JSON.stringify(self.games));	
+				}
+			})
+			
+		}
     });
+	}
+	else{
+		this.games = new GameCollection();
+		this.games.set(storage)
+		self.selectRandomGameTitles(this);
+		Backbone.history.start();
+	}
+	
   };
 
   App.prototype.addGameTitle = function (gameTitle) {
